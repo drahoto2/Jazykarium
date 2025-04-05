@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazykarium - Objednat</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        #logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header-container">
+            <div id="logo">
+                <a href="onas.html">
+                    <img src="../../assets/logo.png" alt="Logo Jazykarium">
+                </a>
+                <a href="onas.html">
+                    <span>Jazykarium</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="onas.html">O nás</a></li>
+                    <li><a href="sluzby.html">Služby</a></li>
+                    <li><a href="cenik.html">Ceník</a></li>
+                    <li><a href="objednat.html">Objednat</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="order-container">
+            <h1>Objednat služby</h1>
+            <div id="form-content">
+                <p>
+                    Vyplňte prosím následující formulář a my se Vám co nejdříve ozveme s podrobnostmi.
+                    Naše služby jsou rychlé, spolehlivé a přizpůsobené Vašim potřebám.
+                    Těšíme se na spolupráci s Vámi!
+                </p>
+                <form id="order-form">
+                    <label for="name">Jméno:</label>
+                    <input type="text" id="name" name="name" placeholder="Zadejte Vaše jméno." required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Zadejte Váš e-mail." required>
+
+                    <label for="service">Vyberte službu:</label>
+                    <select id="service" name="service" required>
+                        <option value="preklady">Překlady</option>
+                        <option value="tlumoceni">Tlumočení</option>
+                        <option value="lokalizace">Lokalizace</option>
+                    </select>
+
+                    <label for="message">Zpráva:</label>
+                    <textarea id="message" name="message" placeholder="Zde zadejte podrobnosti o Vaší objednávce."
+                        rows="5" required></textarea>
+
+                    <button type="submit">Objednat</button>
+                </form>
+            </div>
+            <div id="thank-you-message" style="display: none;">
+                <p>Děkujeme za Vaši objednávku! Podrobné informace vám zašleme na Váš email.</p>
+                <p>Pro případné problémy nás můžete kontaktovat:</p>
+                <ul>
+                    <li>Adresa: Jičín, Husova 391, 506 01, Česká republika</li>
+                    <li>Telefon: +420 123 456 789</li>
+                    <li>Email: <a href="mailto:info@jazykarium.cz">info@jazykarium.cz</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="../js/scripts.js"></script>
+    <footer>
+        <p>&copy; 2025 Jazykarium | Zápočtový projekt pro předmět "Technologie pro publikování na webu" na Univerzitě
+            Hradec Králové</p>
+        <p>Poslední aktualizace: 4. dubna 2025</p>
+        <p>Tomáš Drahoňovský, drahoto2@uhk.cz</p>
+    </footer>
+    <script>
+        const form = document.getElementById('order-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Zabrání odeslání formuláře
+            form.style.display = 'none'; // Skryje formulář
+            thankYouMessage.style.display = 'block'; // Zobrazí poděkování
+        });
+    </script>
+</body>
+
+</html>
